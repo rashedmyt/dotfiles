@@ -1,6 +1,6 @@
 # --------------------- #
 # File	  : .zshrc	#
-# Version : 0.0.1	#
+# Version : 0.0.2	#
 # Author  : rashedmyt	#
 # --------------------- #
 
@@ -39,7 +39,6 @@ zstyle :compinstall filename '$HOME/.zshrc'
 # VCS
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats '(%F{yellow}%b%f)'
 
 precmd () { vcs_info }
