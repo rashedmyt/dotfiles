@@ -1,6 +1,6 @@
 # --------------------- #
 # File	  : .zshrc	#
-# Version : 0.0.2	#
+# Version : 0.0.3	#
 # Author  : rashedmyt	#
 # --------------------- #
 
@@ -21,6 +21,8 @@ export PATH=$PATH:$HOME/github/flutter/flutter/bin	# Flutter
 # Variables		#
 # --------------------- #
 export EDITOR=vim
+export CC=clang
+export CXX=clang++
 
 # --------------------- #
 # Aliases		#
