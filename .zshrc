@@ -1,23 +1,47 @@
 # --------------------- #
-# Author: rashedmyt	#
+# File	  : .zshrc	#
+# Version : 0.0.1	#
+# Author  : rashedmyt	#
 # --------------------- #
 
-# Setup ZSH PROMPT
-autoload -Uz promptinit && promptinit
-autoload -Uz compinit && compinit
-autoload -Uz vcs_info
-setopt prompt_subst
-precmd () { vcs_info }
-zstyle ':vcs_info:git:*' formats '(%F{yellow}%b%f)'
-export PROMPT='[%F{green}%n@%m%f][%F{cyan}%~%f]${vcs_info_msg_0_}'$'\n''%# '
+# --------------------- #
+# History		#
+# --------------------- #
+HISTFILE=~/.histfile
+HISTSIZE=100
+SAVEHIST=100
 
-# Update PATH with tools
+# --------------------- #
+# Path			#
+# --------------------- #
 export PATH=$HOME/fuchsia/.jiri_root/bin:$PATH		# Fuchsia
 export PATH=$PATH:$HOME/github/flutter/flutter/bin	# Flutter
 
-# Environment Variables
+# --------------------- #
+# Variables		#
+# --------------------- #
 export EDITOR=vim
 
-# Aliases
+# --------------------- #
+# Aliases		#
+# --------------------- #
 alias ls='ls --color=auto'
 
+# --------------------- #
+# Prompt 		#
+# --------------------- #
+
+# Completion
+autoload -Uz compinit
+compinit
+zstyle :compinstall filename '$HOME/.zshrc'
+
+# VCS
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git:*' formats '(%F{yellow}%b%f)'
+
+precmd () { vcs_info }
+setopt prompt_subst
+export PROMPT='[%F{green}%n@%m%f][%F{cyan}%~%f]${vcs_info_msg_0_}'$'\n''%# '
