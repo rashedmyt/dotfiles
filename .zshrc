@@ -1,6 +1,6 @@
 # --------------------- #
 # File	  : .zshrc	#
-# Version : 0.0.4	#
+# Version : 0.0.5	#
 # Author  : rashedmyt	#
 # --------------------- #
 
@@ -14,7 +14,6 @@ SAVEHIST=100
 # --------------------- #
 # Path			#
 # --------------------- #
-export PATH=$HOME/fuchsia/.jiri_root/bin:$PATH		# Fuchsia
 export PATH=$PATH:$HOME/github/flutter/flutter/bin	# Flutter
 
 # --------------------- #
